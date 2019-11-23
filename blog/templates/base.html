@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %} | Chinai</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+  </head>
+  <body>
+    <div class="w3-top">
+      <div class="w3-bar w3-light-gray">
+        <a href="/" class="w3-bar-item w3-button w3-mobile w3-xlarge w3-padding-16 w3-wide w3-hover-blue-gray"><strong>CHINAI</strong></a>
+        {% if user.is_superuser %}
+        <a href="/admin/logout" class="w3-bar-item w3-button w3-mobile w3-right w3-xlarge w3-padding-16 w3-hover-blue-gray">Logout</a>
+        {% else %}
+        <a href="/admin/login" class="w3-bar-item w3-button w3-mobile w3-right w3-xlarge w3-padding-16 w3-hover-blue-gray">Login</a>
+        {% endif %}
+        <a href="/posts" class="w3-bar-item w3-button w3-mobile w3-right w3-xlarge w3-padding-16 w3-hover-blue-gray">Posts</a>
+        <a href="/about" class="w3-bar-item w3-button w3-mobile w3-right w3-xlarge w3-padding-16 w3-hover-blue-gray">About</a>
+      </div>
+    </div>
+
+    {% block body %}
+
+    {% endblock %}
+
+    <div class="w3-container w3-light-gray" style="text-align:center; padding-top:1%;padding-bottom:1%;">
+      <h5 style="font-family: 'Roboto Mono', monospace;">&copy; Sardar Patel Vidyalaya. Designed by Anirudh Prabhakaran.</h5>
+      <p><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons Licence" style="border-width:0;padding-bottom:10px;padding-top:10px;" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.</p>
+    </div>
+  </body>
+</html>
