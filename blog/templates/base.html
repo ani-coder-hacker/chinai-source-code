@@ -4,31 +4,67 @@
   <head>
     <meta charset="utf-8">
     <title>{% block title %}{% endblock %} | Chinai</title>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text|Work+Sans:400,700" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
-    <div class="w3-top">
-      <div class="w3-bar w3-light-gray">
-        <a href="/" class="w3-bar-item w3-button w3-mobile w3-xlarge w3-padding-16 w3-wide w3-hover-blue-gray"><strong>CHINAI</strong></a>
-        {% if user.is_superuser %}
-        <a href="/admin/logout" class="w3-bar-item w3-button w3-mobile w3-right w3-xlarge w3-padding-16 w3-hover-blue-gray">Logout</a>
-        {% else %}
-        <a href="/admin/login" class="w3-bar-item w3-button w3-mobile w3-right w3-xlarge w3-padding-16 w3-hover-blue-gray">Login</a>
-        {% endif %}
-        <a href="/posts" class="w3-bar-item w3-button w3-mobile w3-right w3-xlarge w3-padding-16 w3-hover-blue-gray">Posts</a>
-        <a href="/about" class="w3-bar-item w3-button w3-mobile w3-right w3-xlarge w3-padding-16 w3-hover-blue-gray">About</a>
+
+    <div class="header">
+      <div class="header-text grid-item">
+        <p><a href="/">CHINAI</a></p>
       </div>
+      
+      {% if user.is_superuser %}
+
+        <div class="header-items item-extra grid-item">
+          <a href="/about"><p>About</p></a>
+        </div>
+
+
+        <div class="header-items item1 grid-item">
+          <a href="/posts"><p>Posts</p></a>
+        </div>
+
+        <div class="header-items item2 grid-item">
+          <a href="/admin"><p>Admin</p></a>
+        </div>
+
+        <div class="header-items item3 grid-item">
+          <a href="/admin/logout"><p>Logout</p></a>
+        </div>
+
+      {% else %}
+        <div class="header-items item1 grid-item">
+          <a href="/about"><p>About</p></a>
+        </div>
+        <div class="header-items item2 grid-item">
+          <a href="/posts"><p>Posts</a></p>
+        </div>
+        <div class="header-items item3 grid-item">
+          <p><a href="/admin/login">Login</a></p>
+        </div>
+      {% endif %}
     </div>
+
+
 
     {% block body %}
 
     {% endblock %}
 
-    <div class="w3-container w3-light-gray" style="text-align:center; padding-top:1%;padding-bottom:1%;">
-      <h5 style="font-family: 'Roboto Mono', monospace;">&copy; Sardar Patel Vidyalaya. Designed by Anirudh Prabhakaran.</h5>
-      <p><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons Licence" style="border-width:0;padding-bottom:10px;padding-top:10px;" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.</p>
+    <div class="footer">
+      <div class="left-upper-footer grid-item">
+        <p>&copy; Sardar Patel Vidyalaya. <br><br>All content on this website belongs to the mentioned student authors.<br> All posts contain original works.</p>
+      </div>
+      <div class="right-upper-footer grid-item">
+          <img src="https://cdn.jsdelivr.net/gh/ani-coder-hacker/chinai-resources/chakra.png" alt="Chakra">
+      </div>
+      <div class="bottom-footer">
+        <p>All work is licensed under a <a rel="license" style="color:#00ff00;" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</p>
+      </div>
     </div>
+
+
   </body>
 </html>

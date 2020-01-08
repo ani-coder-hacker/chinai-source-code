@@ -3,29 +3,50 @@
 {% block title %} Home {% endblock %}
 
 {% block body %}
-<div class="bgimg-1">
-  <div class="caption">
-  <span class="border w3-jumbo"><b>CHINAI</b></span>
+<div class="main-content">
+  <div class="main-heading">
+    <p>Recent Posts</p>
   </div>
+  {% for x in posts %}
+  <div class="content-cards">
+    <div class="content">
+      <h1 class="content-heading">{{x.title}}</h1>
+      <p class="content-byline">{{ x.byline }}</p>
+      <p> <b>{{ x.author }}, Batch of {{x.batch}}</b>, on {{x.published_date.date}} </p>
+    </div>
+  </div>
+  {% endfor %}
 </div>
 
-<div class="w3-container w3-pale-red" style="padding:5%;">
-  <h1 class="w3-center w3-xxlarge"><b>Categories</b></h1>
-  <div class="row">
-    <div class="column">
-      <div class="card">1</div>
+<div class="following-content">
+  {{number_of_posts}} posts, <a href="/posts">Read More.</a>
+</div>
+
+<div class="wrapper categories">
+  <div class="categories-heading"><h1>Explore</h1></div>
+  <div class="categories-card">
+    <div class="categories-card-content">
+    <p>Description</p>
     </div>
-    <div class="column">
-      <div class="card">2</div>
+  </div>
+  <div class="categories-card">
+    <div class="categories-card-content">
+    <p>Nature</p>
     </div>
-    <div class="column">
-      <div class="card">3</div>
+  </div>
+  <div class="categories-card">
+    <div class="categories-card-content">
+    <p>Threshold</p>
     </div>
-    <div class="column">
-      <div class="card">4</div>
+  </div>
+  <div class="categories-card">
+    <div class="categories-card-content">
+      <p>Experiences</p>
     </div>
-    <div class="column">
-      <div class="card">5</div>
+  </div>
+  <div class="categories-card">
+    <div class="categories-card-content">
+    <p>School</p>
     </div>
   </div>
 </div>

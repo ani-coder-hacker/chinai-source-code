@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 
-{% block title %} Posts {% endblock %}
+{% block title %} {{heading}} {% endblock %}
 
 {% block body %}
 <div class="bgimg-1-alt">
   <div class="caption">
-  <span class="border w3-jumbo"><b>POSTS</b></span>
+  <span class="border w3-jumbo"><b>{{ heading | upper }}</b></span>
   </div>
 </div>
 {% endblock %}

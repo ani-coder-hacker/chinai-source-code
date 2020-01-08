@@ -1,101 +1,265 @@
-*{
-  font-family: 'Roboto Mono', monospace;
-}
-
-body, html {
+body, html{
   height: 100%;
-  margin: 0;
-  font: 400 15px/1.8 "Lato", sans-serif;
-  color: #777;
+  margin:0;
+  padding: 0;
+  color: #010001;
+  font-family: 'Work Sans', sans-serif;
+  background-color: #FCFCFD;
 }
 
-.bgimg-1 {
-  position: relative;
-  opacity: 0.9;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-
-}
-.bgimg-1 {
-  background-image: url("https://cdn.jsdelivr.net/gh/ani-coder-hacker/chinai-resources/header.jpg");
-  min-height: 100%;
+a{
+  text-decoration: none;
+  color: inherit;
 }
 
-.bgimg-1-alt {
-  background-image: url("https://cdn.jsdelivr.net/gh/ani-coder-hacker/chinai-resources/header.jpg");
-  min-height: 60%;
+.header{
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 100px;
+  background-color: #F6F7F9;
+  color: black;
+  font-family: 'Crimson Text', serif;
 }
 
-.caption {
-  position: absolute;
-  left: 0;
-  top: 50%;
+.header-text{
+  grid-column: 1/3;
+  font-size: 3em;
+}
+
+.header-items{
+  font-size: 1.7em;
+  transition-duration: 0.1s;
+}
+
+.header-items:hover{
+  background-color: #b7410e;
+  color: white;
+  transition-duration: 0.3s;
+}
+
+.item3{
+  grid-column: -2/-1;
+}
+
+.item2{
+  grid-column: -3/-2;
+}
+
+.item1{
+  grid-column: -4/-3;
+}
+
+.item-extra{
+  grid-column: -5/-4;
+}
+
+.footer{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 200px auto;
+  grid-template-areas:
+    "luf luf ruf ruf"
+    "bf bf bf bf";
+  background-color: #001f3f;
+  color: white;
+  font-family: 'Work Sans', sans-serif
+}
+
+.left-upper-footer{
+  grid-area: luf;
+}
+
+
+.right-upper-footer{
+  grid-area: ruf;
+}
+
+.bottom-footer{
+  grid-area: bf;
+  border-top-color: white;
+  border-top-style: solid;
+  border-top-width: medium;
+  padding-left: 2%;
+}
+
+.bottom-footer a{
+  color: white;
+  text-decoration: none;
+}
+
+.bottom-footer a:hover{
+  border-bottom: medium solid #00ff00;
+  transition-duration: 0.3s;
+}
+
+.grid-item{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.wrapper {
+  padding: 1%;
+  background: linear-gradient(124deg, #ff2400, #e81d1d, #1de840, #1ddde8, #2b1de8, #dd00f3);
+  background-size: 1800% 1800%;
+
+  -webkit-animation: rainbow 50s ease infinite;
+  -z-animation: rainbow 18s ease infinite;
+  -o-animation: rainbow 18s ease infinite;
+    animation: rainbow 18s ease infinite;}
+
+  @-webkit-keyframes rainbow {
+      0%{background-position:0% 82%}
+      50%{background-position:100% 19%}
+      100%{background-position:0% 82%}
+  }
+  @-moz-keyframes rainbow {
+      0%{background-position:0% 82%}
+      50%{background-position:100% 19%}
+      100%{background-position:0% 82%}
+  }
+  @-o-keyframes rainbow {
+      0%{background-position:0% 82%}
+      50%{background-position:100% 19%}
+      100%{background-position:0% 82%}
+  }
+  @keyframes rainbow {
+      0%{background-position:0% 82%}
+      50%{background-position:100% 19%}
+      100%{background-position:0% 82%}
+}
+
+
+.categories-heading{
+  grid-column: 1/-1;
+  grid-row: 1/2;
+  display: flex;
+  align-items: center;
+  padding-left: 2%;
+  font-weight: bolder;
+  font-size: 1.5em;
+}
+
+.categories-heading h1{
+  font-family: 'Crimson Text', serif;
+}
+
+.categories-heading h1::after{
+  content: '';
+  display: block;
+  border-top: thick solid white;
+  width: 0;
+  -webkit-transition: 1s ease;
+  transition: 1s ease;
+}
+
+.categories-heading h1:hover::after{
   width: 100%;
-  text-align: center;
-  color: #000;
 }
 
-.caption span.border {
-  background-color: #111;
-  color: #fff;
-  padding: 18px;
-  font-size: 25px;
-  letter-spacing: 10px;
+.categories-card-content p::after{
+  content: '';
+  display: block;
+  border-bottom: thick solid green;
+  width: 0;
+  -webkit-transition: 1s ease;
+  transition: 1s ease;
 }
 
-h3 {
-  letter-spacing: 5px;
-  text-transform: uppercase;
-  font: 20px "Lato", sans-serif;
-  color: #111;
+.categories-card-content p:hover::after{
+  width: 100%;
 }
 
-@media only screen and (max-device-width: 1024px) {
-  .bgimg-1, .bgimg-2, .bgimg-3 {
-    background-attachment: scroll;
-  }
+.categories{
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-rows: 100px 300px;
+  grid-auto-rows: 300px;
+  color: white;
+  font-weight: bolder;
+  letter-spacing: 3px;
 }
 
-* {
-  box-sizing: border-box;
+.categories-card{
+  background-color: white;
+  color: #010001;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  transition: 0.3s;
 }
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
+.categories-card:hover{
+  box-shadow: 7px 10px;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
 }
 
-/* Float four columns side by side */
-.column {
-  float: left;
-  width: 20%;
-  padding: 0 10px;
+.categories-card-content{
+  grid-row: 2/3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.7em;
 }
 
-/* Remove extra left and right margins, due to padding in columns */
-.row {margin: 0 -5px;}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
+.main-content{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  grid-auto-rows: 1fr;
+  grid-gap: 5px;
+  padding: 1%;
 }
 
-/* Style the counter cards */
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
-  padding: 16px;
-  text-align: center;
-  background-color: #f1f1f1;
+.following-content{
+    padding-left: 2%;
+    padding-bottom: 3%;
+    padding-top: 2%;
+    font-weight: 600;
+    font-size: 1.3em;
+    transition: 0.3s;
 }
 
-/* Responsive columns - one column layout (vertical) on small screens */
-@media screen and (max-width: 600px) {
-  .column {
-    width: 100%;
-    display: block;
-    margin-bottom: 20px;
-  }
+.following-content a{
+  color: blue;
+}
+
+.following-content a:hover{
+  border-bottom: thick solid blue;
+  transition: 0.3s;
+}
+
+.content{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 50px 50px 50px;
+  padding: 0;
+  margin: 0;
+}
+
+.content-heading{
+  grid-row: 1/2;
+}
+
+.content-byline{
+  grid-row: 2/3;
+}
+
+.content-extra{
+  grid-row: 3/4;
+}
+
+.main-heading{
+  grid-column: 1/-1;
+  font-family: 'Crimson Text', serif;
+  font-weight: 400;
+  padding-left: 2%;
+  font-size: 4em;
+}
+
+.content-cards{
+  border: 2px solid black;
+  padding-left: 3%;
 }

@@ -7,14 +7,14 @@ class Post(models.Model):
     DESCRIPTIONS = 'DR'
     NATURE = 'NA'
     THRESHOLD = 'TH'
-    PEREXP = 'PE'
+    EXP = 'E'
     SCHOOL = 'SC'
 
     CAT_CHOICES = [
     (DESCRIPTIONS, 'Descriptions'),
     (NATURE, 'Nature'),
     (THRESHOLD, 'Threshold'),
-    (PEREXP, 'Personal Experiences'),
+    (EXP, 'Experiences'),
     (SCHOOL, 'School')
     ]
 
@@ -35,4 +35,7 @@ class Post(models.Model):
         return self.title
 
 class Message(models.Model):
-    content = models.CharField(max_length=200, blank=True)
+    subject = models.CharField(max_length=100, blank=True)
+    content = models.TextField()
+    def __str__(self):
+        return self.subject
