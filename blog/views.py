@@ -1,9 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render,get_object_or_404
 from .models import Post, Message
 
 # Create your views here.
 def post_list(request):
-    posts = Post.objects.all()
+    posts = Post.objects.all().order_by('-published_date')
     message = Message.objects.all()
     args = {
     'posts':posts,
@@ -76,3 +76,11 @@ def cat_sc(request):
     'message' : message
     }
     return render(request, 'blog/cat.html', args)
+
+def post_detail(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    return render(request, 'blog/post_detail.html', {'post': post})
+
+def about(request):
+    args = {}
+    return render(request, 'blog/about.html', args)

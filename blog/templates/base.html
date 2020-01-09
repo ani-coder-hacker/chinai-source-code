@@ -14,26 +14,21 @@
       <div class="header-text grid-item">
         <p><a href="/">CHINAI</a></p>
       </div>
-      
+
       {% if user.is_superuser %}
 
         <div class="header-items item-extra grid-item">
           <a href="/about"><p>About</p></a>
         </div>
-
-
         <div class="header-items item1 grid-item">
           <a href="/posts"><p>Posts</p></a>
         </div>
-
         <div class="header-items item2 grid-item">
           <a href="/admin"><p>Admin</p></a>
         </div>
-
         <div class="header-items item3 grid-item">
           <a href="/admin/logout"><p>Logout</p></a>
         </div>
-
       {% else %}
         <div class="header-items item1 grid-item">
           <a href="/about"><p>About</p></a>
@@ -61,7 +56,15 @@
           <img src="https://cdn.jsdelivr.net/gh/ani-coder-hacker/chinai-resources/chakra.png" alt="Chakra">
       </div>
       <div class="bottom-footer">
-        <p>All work is licensed under a <a rel="license" style="color:#00ff00;" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</p>
+        <p>All work is licensed under a
+          <a rel="license" style="color:#00ff00;" class="nombore" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+            <span>
+              Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+            </span>
+            <span class="slider sliderGreen">
+            </span>
+          </a>
+        </p>
       </div>
     </div>
 

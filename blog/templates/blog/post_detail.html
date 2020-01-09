@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %} {{post.title}} by {{post.author}} {% endblock %}
+
+{% block body %}
+<div class="post">
+  <div class="post-content">
+    <h1 class="post-heading">{{ post.title }}</h1>
+    <h4 style="padding-bottom:1%;margin-bottom:0;">By {{post.author}}, Batch of {{post.batch}}</h4>
+    <i>Published on {{post.published_date.date}}</i>
+    <p class="post-content-content">{{post.content}}</p>
+  </div>
+</div>
+{% endblock %}

@@ -3,9 +3,20 @@
 {% block title %} Posts {% endblock %}
 
 {% block body %}
-<div class="bgimg-1-alt">
-  <div class="caption">
-  <span class="border w3-jumbo"><b>POSTS</b></span>
+<div class="post">
+  <div class="post-content">
+    <h1 class="post-heading">Posts</h1>
+    {% for x in posts %}
+      <a href="{% url 'post_detail' pk=x.pk %}" class="">
+        <div class="list-div">
+          <p class="list-heading nombore">
+              <span>{{x.title}}</span>
+              <span class="slider sliderRustNormal"></span>
+          </p>
+          <p><b>{{ x.author }}, Batch of {{x.batch}}, on {{x.published_date.date}}</b></p>
+        </div>
+      </a>
+    {% endfor %}
   </div>
 </div>
 {% endblock %}

@@ -8,45 +8,55 @@
     <p>Recent Posts</p>
   </div>
   {% for x in posts %}
-  <div class="content-cards">
-    <div class="content">
-      <h1 class="content-heading">{{x.title}}</h1>
-      <p class="content-byline">{{ x.byline }}</p>
-      <p> <b>{{ x.author }}, Batch of {{x.batch}}</b>, on {{x.published_date.date}} </p>
+  <a href="{% url 'post_detail' pk=x.pk %}">
+    <div class="content-cards">
+      <div class="content">
+        <p>
+          <span class="nombore">
+            <span class="content-cards-heading">
+              {{x.title}}
+            </span>
+            <span class="slider sliderRust">
+            </span>
+          </span>
+        </p>
+        <p class="content-byline">{{ x.byline }}</p>
+        <p> <b>{{ x.author }}, Batch of {{x.batch}}</b>, on {{x.published_date.date}} </p>
+      </div>
     </div>
-  </div>
+  </a>
   {% endfor %}
 </div>
 
 <div class="following-content">
-  {{number_of_posts}} posts, <a href="/posts">Read More.</a>
+  {{number_of_posts}} posts, <a href="/posts" class="nombore"><span>Read More.</span><span class="slider sliderBlue"></span></a>
 </div>
 
 <div class="wrapper categories">
   <div class="categories-heading"><h1>Explore</h1></div>
   <div class="categories-card">
     <div class="categories-card-content">
-    <p>Description</p>
+      <a href="/cat/dr" class="nombore"><span>Description</span><span class="slider sliderRust"></span></a>
     </div>
   </div>
   <div class="categories-card">
     <div class="categories-card-content">
-    <p>Nature</p>
+    <a href="/cat/na" class="nombore"><span>Nature</span><span class="slider sliderRust"></span></a>
     </div>
   </div>
   <div class="categories-card">
     <div class="categories-card-content">
-    <p>Threshold</p>
+    <a href="/cat/th" class="nombore"><span>Threshold</span><span class="slider sliderRust"></span></a>
     </div>
   </div>
   <div class="categories-card">
     <div class="categories-card-content">
-      <p>Experiences</p>
+      <a href="/cat/pe" class="nombore"><span>Experiences</span><span class="slider sliderRust"></span></a>
     </div>
   </div>
   <div class="categories-card">
     <div class="categories-card-content">
-    <p>School</p>
+    <a href="/cat/sc" class="nombore"><span>School</span><span class="slider sliderRust"></span></a>
     </div>
   </div>
 </div>
