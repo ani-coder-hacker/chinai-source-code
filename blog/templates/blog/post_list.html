@@ -3,20 +3,24 @@
 {% block title %} Posts {% endblock %}
 
 {% block body %}
-<div class="post">
-  <div class="post-content">
-    <h1 class="post-heading">Posts</h1>
+
+<div class="flex mt-6">
+  <div class="w-1/3"></div>
+
+  <div class="w-4/6">
     {% for x in posts %}
-      <a href="{% url 'post_detail' pk=x.pk %}" class="">
-        <div class="list-div">
-          <p class="list-heading nombore">
-              <span>{{x.title}}</span>
-              <span class="slider sliderRustNormal"></span>
+      <a href="{% url 'post_detail' pk=x.pk %}">
+        <div class="bg-gray-200 text-black hover:text-custom-blue px-8 py-8 mb-10 hover:shadow-lg rounded-lg">
+          <h1 class="font-black heading-text text-4xl border-dotted border-custom-blue border-b-4">{{x.title}}</h1>
+          <p class="mt-2 font-semibold text-xl text">
+            By {{x.author}}, Batch of {{x.batch}}, on {{x.published_date}}
           </p>
-          <p><b>{{ x.author }}, Batch of {{x.batch}}, on {{x.published_date.date}}</b></p>
         </div>
       </a>
     {% endfor %}
   </div>
+
+  <div class="w-1/3"></div>
 </div>
+
 {% endblock %}

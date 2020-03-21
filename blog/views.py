@@ -13,12 +13,12 @@ def post_list(request):
 
 def home(request):
     message = Message.objects.all()
-    posts = Post.objects.all().order_by('-published_date')[0:4]
-    number_of_posts = Post.objects.all().count()
+    firstpost = Post.objects.all().order_by('-published_date')[0]
+    posts = Post.objects.all().order_by('-published_date')[1:4]
     args = {
     'message' : message,
+    'firstpost' : firstpost,
     'posts' : posts,
-    'number_of_posts': number_of_posts,
     }
     return render(request, 'blog/home.html', args)
 
