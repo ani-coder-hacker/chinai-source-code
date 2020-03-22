@@ -84,3 +84,7 @@ def post_detail(request, pk):
 def about(request):
     args = {}
     return render(request, 'blog/about.html', args)
+
+def cat(request):
+    args = {}
+    return render(request, 'blog/categories.html', args)

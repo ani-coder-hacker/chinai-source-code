@@ -1,12 +1,33 @@
 {% extends 'base.html' %}
 
-{% block title %} Posts {% endblock %}
+{% block title %} About {% endblock %}
 
 {% block body %}
-<div class="post">
-  <div class="post-content">
-    <h1 class="post-heading">About</h1>
-    <p class="post-content-content">Chinai is the blog of Sardar Patel Vidyalaya. The content on this website is managed by the Language Departments.</p>
-  </div>
+<style>
+    .image{
+        background-image: url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjU1NTk3fQ&auto=format&fit=crop&w=752&q=80");
+        height: 25rem;
+        background-size: cover;
+        background-position: center;
+        opacity: 1;
+    }
+</style>
+
+<div class="w-full image flex justify-center items-center">
+  <h1 class="font-black text-white heading-text text-5xl sm:text-6xl">About</h1>
 </div>
+
+<div class="mt-4 mb-6 py-6 flex">
+  <div class="w-1/6"></div>
+
+  <div class="w-4/6 sm:text-justify text text-xl">
+    <p>Chinai is the blog of Sardar Patel Vidyalaya. The content on this website is managed by the Language Departments.</p>
+  </div>
+
+  <div class="w-1/6"></div>
+
+</div>
+
+
+
 {% endblock %}

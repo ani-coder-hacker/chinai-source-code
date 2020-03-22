@@ -28,7 +28,7 @@ class Post(models.Model):
     )
     content = models.TextField()
     batch = models.IntegerField()
-    published_date = models.DateTimeField(blank=True, null=True)
+    published_date = models.DateTimeField()
 
     def __str__(self):
         return self.title

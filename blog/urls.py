@@ -11,5 +11,6 @@ urlpatterns = [
     path('cat/th', views.cat_th, name='post_list'),
     path('cat/pe', views.cat_pe, name='post_list'),
     path('cat/sc', views.cat_sc, name='post_list'),
+    path('cat', views.cat, name='categories'),
     path('post/<int:pk>/', views.post_detail, name='post_detail'),
 ]

@@ -11,10 +11,10 @@
 
 </head>
 
-<body>
+<body class="text">
 
 {% if user.is_superuser %}
-<header class="px-4 py-4 bg-gray-300 text-gray-800 sm:flex sm:justify-between">
+<header class="px-4 py-4 bg-gray-200 text-gray-800 sm:flex sm:justify-between">
     <div class="flex items-center justify-between">
         <div>
             <h1 class="font-black heading-text text-4xl uppercase"><a href="/">Chinai</a></h1>
@@ -32,13 +32,12 @@
     <div class="py-1 text-gray-800 hidden sm:flex" id="drawer">
         <a href="/about" class="outline-none block px-2 py-1 font-semibold text-2xl text rounded-lg hover:bg-gray-900 hover:text-white lowercase sm:normal-case">About</a>
         <a href="/posts" class="outline-none block px-2 py-1 mt-1 sm:mt-0 sm:ml-2 font-semibold text-2xl text rounded-lg hover:bg-gray-900 hover:text-white lowercase sm:normal-case">Posts</a>
-        <a href="/pages" class="outline-none block px-2 py-1 mt-1 sm:mt-0 sm:ml-2 font-semibold text-2xl text rounded-lg hover:bg-gray-900 hover:text-white lowercase sm:normal-case">Pages</a>
         <a href="/admin" class="outline-none block px-2 py-1 mt-1 sm:mt-0 sm:ml-2 font-semibold text-2xl text rounded-lg hover:bg-gray-900 hover:text-white lowercase sm:normal-case">Admin</a>
         <a href="/logout" class="outline-none block px-2 py-1 mt-1 sm:mt-0 sm:ml-2 font-semibold text-2xl text rounded-lg hover:bg-gray-900 hover:text-white lowercase sm:normal-case">Logout</a>
     </div>
 </header>
 {% else %}
-<header class="px-4 py-4 bg-gray-300 text-gray-800 sm:flex sm:justify-between">
+<header class="px-4 py-4 bg-gray-200 text-gray-800 sm:flex sm:justify-between">
     <div class="flex items-center justify-between">
         <div>
             <h1 class="font-black heading-text text-4xl uppercase"><a href="/">Chinai</a></h1>
@@ -56,7 +55,6 @@
     <div class="py-1 text-gray-800 hidden sm:flex" id="drawer">
         <a href="/about" class="outline-none block px-2 py-1 font-semibold text-2xl text rounded-lg hover:bg-gray-900 hover:text-white lowercase sm:normal-case">About</a>
         <a href="/posts" class="outline-none block px-2 py-1 mt-1 sm:mt-0 sm:ml-2 font-semibold text-2xl text rounded-lg hover:bg-gray-900 hover:text-white lowercase sm:normal-case">Posts</a>
-        <a href="/pages" class="outline-none block px-2 py-1 mt-1 sm:mt-0 sm:ml-2 font-semibold text-2xl text rounded-lg hover:bg-gray-900 hover:text-white lowercase sm:normal-case">Pages</a>
         <a href="/admin" class="outline-none block px-2 py-1 mt-1 sm:mt-0 sm:ml-2 font-semibold text-2xl text rounded-lg hover:bg-gray-900 hover:text-white lowercase sm:normal-case">Login</a>
     </div>
 </header>
@@ -71,18 +69,20 @@
               <ul>
                   <li><a href="/about" class="hover:text-custom-green"><i class="fas fa-long-arrow-alt-right mr-4"></i>About</a></li>
                   <li><a href="/posts" class="hover:text-custom-green"><i class="fas fa-long-arrow-alt-right mr-4"></i>Posts</a></li>
-                  <li><a href="/pages" class="hover:text-custom-green"><i class="fas fa-long-arrow-alt-right mr-4"></i>Pages</a></li>
                   <li><a href="/cat" class="hover:text-custom-green"><i class="fas fa-long-arrow-alt-right mr-4"></i>Categories</a></li>
                   <li><a href="#" class="hover:text-custom-green"><i class="fas fa-long-arrow-alt-right mr-4"></i>Contribute</a></li>
                   <li><a href="http://www.spvdelhi.org" class="hover:text-custom-green"><i class="fas fa-long-arrow-alt-right mr-4"></i>Visit school website</a></li>
               </ul>
           </div>
           <div class="block sm:w-1/2 px-8 py-8 text-center">
-              <h1 class="block w-full">
+              <h1 class="block w-full heading-text font-semibold">
                   Sardar Patel Vidyalaya
               </h1>
               <p class="block text-xl w-full text-left mt-8">
-                  All the content on this website is either the creation of the mentioned student authors, or has been appropriately licensed and used. All Rights Reserved.
+                  All the content on this website is either the creation of the mentioned student authors, or has been appropriately licensed and used.
+                  All Rights Reserved.
+                  <br>
+                  All photographs from <a href="https://unsplash.com/" class="border-b-4 border-dotted border-blue-200 text-blue-200 hover:cursor-pointer hover:border-custom-green hover:text-custom-green">Unsplash</a>.
               </p>
           </div>
       </div>

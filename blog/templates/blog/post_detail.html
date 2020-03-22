@@ -20,10 +20,10 @@
 <div class="mt-4 mb-6 py-6 flex">
   <div class="w-1/6"></div>
 
-  <div class="w-4/6 text-justify">
-    <h1 class="heading-text font-black text-6xl">{{post.title}}</h1>
+  <div class="w-4/6 sm:text-justify">
+    <h1 class="heading-text font-black text-5xl sm:text-6xl">{{post.title}}</h1>
     <h2 class="heading-text font-black text-xl">By {{post.author}}, Batch of {{post.batch}}</h2>
-    <h2 class="heading-text font-black text-xl">Published on {{post.published_date}}</h2>
+    <h2 class="heading-text font-black text-xl">Published on {{post.published_date.date}}</h2>
 
     <p class="text text-3xl mt-6">
       {{post.content}}
