@@ -34,6 +34,7 @@
         <a href="/posts" class="outline-none block px-2 py-1 mt-1 sm:mt-0 sm:ml-2 font-semibold text-2xl text rounded-lg hover:bg-gray-900 hover:text-white lowercase sm:normal-case">Posts</a>
         <a href="/admin" class="outline-none block px-2 py-1 mt-1 sm:mt-0 sm:ml-2 font-semibold text-2xl text rounded-lg hover:bg-gray-900 hover:text-white lowercase sm:normal-case">Admin</a>
         <a href="/logout" class="outline-none block px-2 py-1 mt-1 sm:mt-0 sm:ml-2 font-semibold text-2xl text rounded-lg hover:bg-gray-900 hover:text-white lowercase sm:normal-case">Logout</a>
+        <a href="/search" class="outline-none block px-2 py-1 mt-1 sm:mt-0 sm:ml-2 font-semibold text-2xl text rounded-lg hover:bg-gray-900 hover:text-white lowercase sm:normal-case"><i class="fas fa-search"></i></a>
     </div>
 </header>
 {% else %}
@@ -56,6 +57,7 @@
         <a href="/about" class="outline-none block px-2 py-1 font-semibold text-2xl text rounded-lg hover:bg-gray-900 hover:text-white lowercase sm:normal-case">About</a>
         <a href="/posts" class="outline-none block px-2 py-1 mt-1 sm:mt-0 sm:ml-2 font-semibold text-2xl text rounded-lg hover:bg-gray-900 hover:text-white lowercase sm:normal-case">Posts</a>
         <a href="/admin" class="outline-none block px-2 py-1 mt-1 sm:mt-0 sm:ml-2 font-semibold text-2xl text rounded-lg hover:bg-gray-900 hover:text-white lowercase sm:normal-case">Login</a>
+        <a href="/search" class="outline-none block px-2 py-1 mt-1 sm:mt-0 sm:ml-2 font-semibold text-2xl text rounded-lg hover:bg-gray-900 hover:text-white lowercase sm:normal-case"><i class="fas fa-search"></i></a>
     </div>
 </header>
 {% endif %}
@@ -64,13 +66,13 @@
 
       {% endblock %}
 
-      <div class="w-full sm:flex bg-custom-blue text-white font-semibold text-4xl text">
+      <div class="w-full sm:flex bg-custom-blue text-white font-semibold text-4xl text mt-64">
           <div class="block sm:w-1/2 sm:flex px-8 py-8 text-2xl ml-8 leading-relaxed">
               <ul>
                   <li><a href="/about" class="hover:text-custom-green"><i class="fas fa-long-arrow-alt-right mr-4"></i>About</a></li>
                   <li><a href="/posts" class="hover:text-custom-green"><i class="fas fa-long-arrow-alt-right mr-4"></i>Posts</a></li>
                   <li><a href="/cat" class="hover:text-custom-green"><i class="fas fa-long-arrow-alt-right mr-4"></i>Categories</a></li>
-                  <li><a href="#" class="hover:text-custom-green"><i class="fas fa-long-arrow-alt-right mr-4"></i>Contribute</a></li>
+                  <li><a href="/contribute" class="hover:text-custom-green"><i class="fas fa-long-arrow-alt-right mr-4"></i>Contribute</a></li>
                   <li><a href="http://www.spvdelhi.org" class="hover:text-custom-green"><i class="fas fa-long-arrow-alt-right mr-4"></i>Visit school website</a></li>
               </ul>
           </div>
@@ -82,7 +84,7 @@
                   All the content on this website is either the creation of the mentioned student authors, or has been appropriately licensed and used.
                   All Rights Reserved.
                   <br>
-                  All photographs from <a href="https://unsplash.com/" class="border-b-4 border-dotted border-blue-200 text-blue-200 hover:cursor-pointer hover:border-custom-green hover:text-custom-green">Unsplash</a>.
+                  All photographs from <a href="https://unsplash.com/" class="border-b-4 border-dotted border-blue-200 text-blue-200 hover:cursor-pointer hover:border-custom-green hover:text-custom-green">Unsplash</a>, and <a href="https://picsum.photos" class="border-b-4 border-dotted border-blue-200 text-blue-200 hover:cursor-pointer hover:border-custom-green hover:text-custom-green">Lorem Picsum</a>.
               </p>
           </div>
       </div>
