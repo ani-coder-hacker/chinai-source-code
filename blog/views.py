@@ -14,10 +14,10 @@ def post_list(request):
         posts = paginator.page(1)
     except EmptyPage:
         posts = paginator.page(paginator.num_pages)
-    message = Message.objects.all()
+    message = Message.objects.all().order_by('-id')
     args = {
     'posts':posts,
-    'message':message
+    'messages':message
     }
     return render(request, 'blog/post_list.html', args)
 
@@ -31,19 +31,19 @@ def search(request):
             Q(content__icontains=query) |
             Q(batch__icontains=query)
             ).distinct()
-    message = Message.objects.all()
+    message = Message.objects.all().order_by('-id')
     args = {
     'posts':posts,
-    'message':message
+    'messages':message
     }
     return render(request, 'blog/search.html', args)
 
 def home(request):
-    message = Message.objects.all()
+    message = Message.objects.all().order_by('-id')
     firstpost = Post.objects.all().order_by('-published_date')[0]
     posts = Post.objects.all().order_by('-published_date')[1:4]
     args = {
-    'message' : message,
+    'messages' : message,
     'firstpost' : firstpost,
     'posts' : posts,
     }
@@ -51,71 +51,85 @@ def home(request):
 
 def cat_dr(request):
     posts = Post.objects.filter(category='DR')
-    message = Message.objects.all()
+    message = Message.objects.all().order_by('-id')
     heading = 'Descriptions'
     args = {
     'posts' : posts,
     'heading' : heading,
-    'message' : message
+    'messages' : message
     }
     return render(request, 'blog/cat.html', args)
 
 def cat_na(request):
     posts = Post.objects.filter(category='NA')
-    message = Message.objects.all()
+    message = Message.objects.all().order_by('-id')
     heading = 'Nature'
     args = {
     'posts' : posts,
     'heading' : heading,
-    'message' : message
+    'messages' : message
     }
     return render(request, 'blog/cat.html', args)
 
 def cat_th(request):
     posts = Post.objects.filter(category='TH')
-    message = Message.objects.all()
+    message = Message.objects.all().order_by('-id')
     heading = 'Threshold'
     args = {
     'posts' : posts,
     'heading' : heading,
-    'message' : message
+    'messages' : message
     }
     return render(request, 'blog/cat.html', args)
 
 def cat_pe(request):
     posts = Post.objects.filter(category='E')
-    message = Message.objects.all()
+    message = Message.objects.all().order_by('-id')
     heading = 'Experiences'
     args = {
     'posts' : posts,
     'heading' : heading,
-    'message' : message
+    'messages' : message
     }
     return render(request, 'blog/cat.html', args)
 
 def cat_sc(request):
     posts = Post.objects.filter(category='SC')
-    message = Message.objects.all()
+    message = Message.objects.all().order_by('-id')
     heading = 'School'
     args = {
     'posts' : posts,
     'heading' : heading,
-    'message' : message
+    'messages' : message
     }
     return render(request, 'blog/cat.html', args)
 
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
-    return render(request, 'blog/post_detail.html', {'post': post})
+    message = Message.objects.all().order_by('-id')
+    args = {
+        'post' : post,
+        'messages' : message,
+    }
+    return render(request, 'blog/post_detail.html',args)
 
 def about(request):
-    args = {}
+    message = Message.objects.all().order_by('-id')
+    args = {
+     'messages' : message,
+    }
     return render(request, 'blog/about.html', args)
 
 def cat(request):
-    args = {}
+    message = Message.objects.all().order_by('-id')
+    args = {
+     'messages' : message,
+    }
     return render(request, 'blog/categories.html', args)
 
 def contribute(request):
-    args = {}
+    message = Message.objects.all().order_by('-id')
+    args = {
+     'messages' : message,
+    }
     return render(request, 'blog/contribute.html', args)

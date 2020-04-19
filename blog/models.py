@@ -34,7 +34,21 @@ class Post(models.Model):
         return self.title
 
 class Message(models.Model):
+
+    Alert = 'AL'
+    Information = 'IF'
+
+    TYPE = [
+    (Alert, 'Alert'),
+    (Information, 'Information')
+    ]
+
     subject = models.CharField(max_length=100, blank=True)
+    type = models.CharField(
+    max_length=2,
+    choices = TYPE,
+    default = Information,
+    )
     content = models.TextField()
     def __str__(self):
         return self.subject
