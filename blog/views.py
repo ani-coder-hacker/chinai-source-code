@@ -40,8 +40,13 @@ def search(request):
 
 def home(request):
     message = Message.objects.all().order_by('-id')
-    firstpost = Post.objects.all().order_by('-published_date')[0]
-    posts = Post.objects.all().order_by('-published_date')[1:4]
+    x = Posts.objects.all()
+    if x:
+        firstpost = Post.objects.all().order_by('-published_date')[0]
+        posts = Post.objects.all().order_by('-published_date')[1:4]
+    else:
+        posts = []
+        firstpost = []
     args = {
     'messages' : message,
     'firstpost' : firstpost,
