@@ -6,7 +6,7 @@ from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 # Create your views here.
 def post_list(request):
     posts_list = Post.objects.all().order_by('-published_date')
-    paginator = Paginator(posts_list, 10)
+    paginator = Paginator(posts_list, 4)
     page = request.GET.get('page')
     try:
         posts = paginator.page(page)
