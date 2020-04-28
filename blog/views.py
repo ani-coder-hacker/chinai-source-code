@@ -15,9 +15,11 @@ def post_list(request):
     except EmptyPage:
         posts = paginator.page(paginator.num_pages)
     message = Message.objects.all().order_by('-id')
+    heading = "Posts"
     args = {
     'posts':posts,
-    'messages':message
+    'messages':message,
+    "heading" : heading
     }
     return render(request, 'blog/post_list.html', args)
 
@@ -55,59 +57,99 @@ def home(request):
     return render(request, 'blog/home.html', args)
 
 def cat_dr(request):
-    posts = Post.objects.filter(category='DR')
-    message = Message.objects.all().order_by('-id')
+    posts_list = Post.objects.filter(category='DR')
+    paginator = Paginator(posts_list, 4)
+    page = request.GET.get('page')
+    try:
+        posts = paginator.page(page)
+    except PageNotAnInteger:
+        posts = paginator.page(1)
+    except EmptyPage:
+        posts = paginator.page(paginator.num_pages)
     heading = 'Descriptions'
+    message = Message.objects.all().order_by('-id')
     args = {
     'posts' : posts,
     'heading' : heading,
     'messages' : message
     }
-    return render(request, 'blog/cat.html', args)
+    return render(request, 'blog/post_list.html', args)
 
 def cat_na(request):
-    posts = Post.objects.filter(category='NA')
-    message = Message.objects.all().order_by('-id')
+    posts_list = Post.objects.filter(category='NA')
+    paginator = Paginator(posts_list, 4)
+    page = request.GET.get('page')
+    try:
+        posts = paginator.page(page)
+    except PageNotAnInteger:
+        posts = paginator.page(1)
+    except EmptyPage:
+        posts = paginator.page(paginator.num_pages)
     heading = 'Nature'
+    message = Message.objects.all().order_by('-id')
     args = {
     'posts' : posts,
     'heading' : heading,
     'messages' : message
     }
-    return render(request, 'blog/cat.html', args)
+    return render(request, 'blog/post_list.html', args)
 
 def cat_th(request):
-    posts = Post.objects.filter(category='TH')
-    message = Message.objects.all().order_by('-id')
+    posts_list = Post.objects.filter(category='TH')
+    paginator = Paginator(posts_list, 4)
+    page = request.GET.get('page')
+    try:
+        posts = paginator.page(page)
+    except PageNotAnInteger:
+        posts = paginator.page(1)
+    except EmptyPage:
+        posts = paginator.page(paginator.num_pages)
     heading = 'Threshold'
+    message = Message.objects.all().order_by('-id')
     args = {
     'posts' : posts,
     'heading' : heading,
     'messages' : message
     }
-    return render(request, 'blog/cat.html', args)
+    return render(request, 'blog/post_list.html', args)
 
 def cat_pe(request):
-    posts = Post.objects.filter(category='E')
-    message = Message.objects.all().order_by('-id')
+    posts_list = Post.objects.filter(category='E')
+    paginator = Paginator(posts_list, 4)
+    page = request.GET.get('page')
+    try:
+        posts = paginator.page(page)
+    except PageNotAnInteger:
+        posts = paginator.page(1)
+    except EmptyPage:
+        posts = paginator.page(paginator.num_pages)
     heading = 'Experiences'
+    message = Message.objects.all().order_by('-id')
     args = {
     'posts' : posts,
     'heading' : heading,
     'messages' : message
     }
-    return render(request, 'blog/cat.html', args)
+    return render(request, 'blog/post_list.html', args)
 
 def cat_sc(request):
-    posts = Post.objects.filter(category='SC')
-    message = Message.objects.all().order_by('-id')
+    posts_list = Post.objects.filter(category='SC')
+    paginator = Paginator(posts_list, 4)
+    page = request.GET.get('page')
+    try:
+        posts = paginator.page(page)
+    except PageNotAnInteger:
+        posts = paginator.page(1)
+    except EmptyPage:
+        posts = paginator.page(paginator.num_pages)
     heading = 'School'
+    message = Message.objects.all().order_by('-id')
     args = {
     'posts' : posts,
     'heading' : heading,
     'messages' : message
     }
-    return render(request, 'blog/cat.html', args)
+    return render(request, 'blog/post_list.html', args)
 
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
@@ -132,9 +174,9 @@ def cat(request):
     }
     return render(request, 'blog/categories.html', args)
 
-def contribute(request):
+def principal(request):
     message = Message.objects.all().order_by('-id')
     args = {
      'messages' : message,
     }
-    return render(request, 'blog/contribute.html', args)
+    return render(request, 'blog/principal.html', args)
